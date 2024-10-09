@@ -2,9 +2,10 @@ from string import punctuation
 
 from aiogram import F, types, Router
 from aiogram.filters import CommandStart, Command
+from filters.chat_types import ChatTypeFilter
 
 user_group_router = Router()
-user_group_router.message.filter()
+user_group_router.message.filter(ChatTypeFilter(['group', 'supergroup']))
 
 restricted_words = {'идиот', 'придурок', 'тварь'}
 
